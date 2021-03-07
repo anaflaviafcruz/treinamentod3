@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PaiAdotivoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/cadastro', [PaiAdotivoController::class, 'index']);
+Route::post('/cadastro/novo', [PaiAdotivoController::class, 'store'])->name('paiAdotivo.store');
